@@ -9,8 +9,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Weather App",
-  description: "A site show the weather data in specific location",
+  title: "Weather Today",
+  description: "A site shows the weather data in specific location and only current time",
 };
 
 export default function RootLayout({
