@@ -1,56 +1,11 @@
 import CurrentTime from "@/components/CurrentTime";
+import DataCard from "@/components/DataCard";
+import { aqiBand, uvIndex } from "@/lib/utils";
 import { getCurrentWeather } from "@/lib/weather.actions";
 import Image from "next/image";
 
-const DataCard = ({
-  value,
-  description,
-  unit,
-}: {
-  value: number | string;
-  description: string;
-  unit?: string;
-}) => (
-  <div className="h-full flex flex-col items-center justify-center bg-white bg-opacity-10 rounded-xl p-4">
-    <h2 className="text-white text-5xl">
-      {value} {unit}
-    </h2>
-    <p className="text-slate-300">{description}</p>
-  </div>
-);
-
 const HomePage = async () => {
   const currentWeather = await getCurrentWeather();
-
-  const aqiBand = (aqi: number) => {
-    let band;
-    if (aqi > 0 && aqi <= 35) {
-      band = "Low";
-    } else if (aqi <= 53) {
-      band = "Moderate";
-    } else if (aqi <= 70) {
-      band = "High";
-    } else if (aqi > 70) {
-      band = "Very High";
-    }
-    return band;
-  };
-
-  const uvIndex = (uv: number) => {
-    let text;
-    if (uv > 0 && uv <= 2) {
-      text = "Low";
-    } else if (uv <= 5) {
-      text = "Medium";
-    } else if (uv <= 7) {
-      text = "High";
-    } else if (uv <= 10) {
-      text = "Very High";
-    } else if (uv > 10) {
-      text = "Extremely High";
-    }
-    return text;
-  };
 
   return (
     <div className="h-full w-full overflow-auto">
