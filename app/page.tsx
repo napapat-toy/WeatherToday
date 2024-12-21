@@ -2,8 +2,6 @@ import { getCurrentWeather } from "@/lib/weather.actions";
 import Image from "next/image";
 import { Suspense } from "react";
 
-// https://www.weatherapi.com/docs/
-
 const DataCard = ({
   value,
   description,
