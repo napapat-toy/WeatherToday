@@ -7,18 +7,12 @@ import { Suspense } from "react";
 const Home = async () => {
   const currentWeather = await getCurrentWeather();
 
-  if(!currentWeather) {
-    return <div>Loading...</div>
-  }
-
   return (
-    <>
-      <div className="h-full w-full overflow-auto">
-        <Suspense fallback={<div>Loading...</div>}>
-          <WeatherBox currentWeather={currentWeather} />
-        </Suspense>
-      </div>
-    </>
+    <div className="h-full w-full overflow-auto">
+      <Suspense fallback={<div>Loading...</div>}>
+        <WeatherBox currentWeather={currentWeather} />
+      </Suspense>
+    </div>
   );
 };
 
