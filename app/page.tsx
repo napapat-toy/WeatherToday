@@ -1,6 +1,5 @@
 import { getCurrentWeather } from "@/lib/weather.actions";
 import Image from "next/image";
-import { Suspense } from "react";
 
 const DataCard = ({
   value,
