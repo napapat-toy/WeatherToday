@@ -1,5 +1,6 @@
 import WeatherBox from "@/components/WeatherBox";
 import { getCurrentWeather } from "@/lib/weather.actions";
+import { Suspense } from "react";
 
 // https://www.weatherapi.com/docs/
 
@@ -9,11 +10,9 @@ const Home = async () => {
   return (
     <>
       <div className="h-full w-full overflow-auto">
-        {currentWeather ? (
+        <Suspense fallback={<div>Loading...</div>}>
           <WeatherBox currentWeather={currentWeather} />
-        ) : (
-          <p className="text-xl">Loading...</p>
-        )}
+        </Suspense>
       </div>
     </>
   );
