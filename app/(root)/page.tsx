@@ -9,7 +9,11 @@ const Home = async () => {
   return (
     <>
       <div className="h-full w-full overflow-auto">
-        {currentWeather && <WeatherBox currentWeather={currentWeather} />}
+        {currentWeather ? (
+          <WeatherBox currentWeather={currentWeather} />
+        ) : (
+          <p className="text-xl">Loading...</p>
+        )}
       </div>
     </>
   );
