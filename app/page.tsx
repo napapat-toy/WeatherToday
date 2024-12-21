@@ -57,7 +57,7 @@ const HomePage = async () => {
 
   return (
     <div className="h-full w-full overflow-auto">
-      <Suspense fallback={<div>Loading...</div>}>
+      {currentWeather && (
         <div className="flex flex-col justify-start rounded-lg px-10 pt-8">
           <div className="flex flex-col text-white">
             <h2 className="font-semibold text-4xl">
@@ -156,7 +156,7 @@ const HomePage = async () => {
             </div>
           </div>
         </div>
-      </Suspense>
+      )}
     </div>
   );
 };
