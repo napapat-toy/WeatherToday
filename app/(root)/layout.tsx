@@ -1,6 +1,6 @@
 import React from "react";
 
-const Layout = ({ children }: React.PropsWithChildren) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return <main className="h-screen w-full">{children}</main>;
 };
 
