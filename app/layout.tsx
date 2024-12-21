@@ -10,7 +10,8 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "Weather Today",
-  description: "A site shows the weather data in specific location and only current time",
+  description:
+    "A site shows the weather data in specific location and only current time",
 };
 
 export default function RootLayout({
@@ -20,8 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} bg-gradient-to-t from-blue-600 to-blue-900`}>
-        <main className="h-screen w-full">{children}</main>
+      <body
+        className={`${openSans.variable} bg-gradient-to-t from-blue-600 to-blue-900`}
+      >
+        {children}
       </body>
     </html>
   );

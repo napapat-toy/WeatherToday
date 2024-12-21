@@ -1,3 +1,4 @@
+import CurrentTime from "@/components/CurrentTime";
 import { getCurrentWeather } from "@/lib/weather.actions";
 import Image from "next/image";
 
@@ -20,9 +21,6 @@ const DataCard = ({
 
 const HomePage = async () => {
   const currentWeather = await getCurrentWeather();
-
-  const currentDate = new Date().toDateString();
-  const currentTime = new Date().toLocaleTimeString();
 
   const aqiBand = (aqi: number) => {
     let band;
@@ -63,9 +61,9 @@ const HomePage = async () => {
               {currentWeather.location.region},{" "}
               {currentWeather.location.country}
             </h2>
-            <p className="mt-2">
-              {currentDate} {currentTime}
-            </p>
+
+            <CurrentTime />
+
             <p className="">
               Last updated :{" "}
               {new Date(

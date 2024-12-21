@@ -1,0 +1,23 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const CurrentTime = () => {
+  const [currentTime, setCurrentTime] = useState("");
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+      setCurrentDate(new Date().toDateString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <p className="mt-2">
+      {currentDate} {currentTime}
+    </p>
+  );
+};
+
+export default CurrentTime;
