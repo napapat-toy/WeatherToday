@@ -48,8 +48,8 @@ const HomePage = async () => {
             </div>
 
             <div className="flex flex-1 flex-col justify-center items-center">
-              <div className="relative flex flex-col gap-2">
-                <p className="absolute text-xl -top-8 left-6">
+              <div className="relative flex flex-col gap-2 text-center">
+                <p className="absolute text-xl -top-8">
                   {aqiBand(currentWeather?.current?.air_quality?.pm2_5.toFixed(0))}
                 </p>
                 <h1 className="text-7xl font-bold flex flex-col">
