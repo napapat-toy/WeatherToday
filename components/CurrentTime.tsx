@@ -15,7 +15,7 @@ const CurrentTime = () => {
   }, []);
   return (
     <p className="mt-2">
-      {currentDate} {currentTime}
+      {currentDate ? currentDate : "Date"} {currentTime ? currentTime : "Time"}
     </p>
   );
 };
